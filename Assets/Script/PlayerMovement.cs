@@ -1,10 +1,15 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float walkSpeed = 4f;
     public float maximumSpeed = 10f;
+    public float attackCooldown = 1f;
+    public int attackDamage = 1; 
 
+    private bool canAttack = true;
+    
     private Rigidbody rb;
     private Vector2 input;
     
@@ -12,6 +17,14 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (Input.GetMouseButtonDown(0) && canAttack)
+        {
+            Attack();
+        }
     }
 
     // Update is called once per frame
@@ -51,5 +64,18 @@ public class PlayerMovement : MonoBehaviour
             return new Vector3();
         }
     }
-    
+
+
+    void Attack()
+    {
+        Debug.Log("Player Attacked!");
+        
+        canAttack = false;
+        Invoke("ResetAttack", attackCooldown);
+    }
+
+    void ResetAttack()
+    {
+        canAttack = true;
+    }
 }
