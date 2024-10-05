@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Animator axeAnimator;
     public float walkSpeed = 4f;
     public float maximumSpeed = 10f;
     public float attackCooldown = 1f;
@@ -19,19 +20,17 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        if (Input.GetMouseButtonDown(0) && canAttack)
-        {
-            Attack();
-        }
-    }
-
     // Update is called once per frame
     void Update()
     {
         input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         input.Normalize();
+
+        if (Input.GetMouseButtonDown(0) && canAttack)
+        {
+            Attack();
+            axeAnimator.SetBool("isAttack", true);
+        }
     }
 
     void FixedUpdate()

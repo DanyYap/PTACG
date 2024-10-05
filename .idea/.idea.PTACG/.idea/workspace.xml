@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="fb3604b1-c639-4674-b9e4-e520fee48745" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PTACG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PTACG/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/AxeSwing.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/AxeSwing.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/AxeSwing.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/AxeSwing.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Pivot.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Pivot.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Player.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Player.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/DanyScene/Test1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DanyScene/Test1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerMovement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/ResourceMaterial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/ResourceMaterial.cs" afterDir="false" />
