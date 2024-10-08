@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float walkSpeed = 4f;
     public float maximumSpeed = 10f;
     public float attackCooldown = 1f;
-    public int attackDamage = 1; 
+    public bool isAttacking = false;
 
     private bool canAttack = true;
     
@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && canAttack)
         {
             Attack();
-            axeAnimator.SetBool("isAttack", true);
+            axeAnimator.SetTrigger("isAttack");
         }
     }
 
@@ -68,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
     void Attack()
     {
         Debug.Log("Player Attacked!");
+        isAttacking = true;
         
         canAttack = false;
         Invoke("ResetAttack", attackCooldown);
@@ -75,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
 
     void ResetAttack()
     {
+        isAttacking = false;
         canAttack = true;
     }
 }

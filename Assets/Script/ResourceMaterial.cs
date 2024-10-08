@@ -6,8 +6,14 @@ public class ResourceMaterial : MonoBehaviour
     public GameObject resourcePrefab;
     public int Health;
     
-    
+    private Vector3 originalPosition;
 
+    void Start()
+    {
+        // Save the original position of the tree
+        originalPosition = transform.localPosition;
+    }
+    
     // Update is called once per frame
     void Update()
     {
@@ -17,11 +23,11 @@ public class ResourceMaterial : MonoBehaviour
             Destroy(gameObject); // Destroy the tree
         }
     }
-
+    
     public void TakeDamage(int damage)
     {
         Health -= damage;
-        Debug.Log("Tree hit! Remaining health: " + Health);
+        Debug.Log("hit! Remaining health: " + Health);
     }
 
     void DropLog()
