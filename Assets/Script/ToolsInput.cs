@@ -1,10 +1,9 @@
-using System;
 using UnityEngine;
 
 public class ToolsInput : MonoBehaviour
 {
     public int toolsDamage = 1;
-    public PlayerMovement playerScript;
+    public PlayerControl playerScript;
     
     [SerializeField] bool _getAttack;
 

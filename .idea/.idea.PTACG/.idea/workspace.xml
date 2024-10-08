@@ -6,11 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="fb3604b1-c639-4674-b9e4-e520fee48745" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PTACG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PTACG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Pivot.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Pivot.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Human.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Human.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Floor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Floor.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Human1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Human1.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/DanyScene/Test1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DanyScene/Test1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/ResourceMaterial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/ResourceMaterial.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerMovement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerMovement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/RoomManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/RoomManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ToolsInput.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ToolsInput.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +56,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../../../Unity Build Folder/PTACG Build/Ver0.01\PTACG.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Unity Build Folder" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\Unity 2022.3.13f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath &quot;C:\GitHub Repo\Repo File\PTACG\PTACG&quot; -debugCodeOptimization" />
@@ -100,7 +112,8 @@
       <workItem from="1725550480663" duration="2956000" />
       <workItem from="1725594938067" duration="1516000" />
       <workItem from="1727248353906" duration="1839000" />
-      <workItem from="1728360645084" duration="5335000" />
+      <workItem from="1728360645084" duration="5929000" />
+      <workItem from="1728370787614" duration="3208000" />
     </task>
     <servers />
   </component>

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerControl : MonoBehaviour
 {
     public Animator axeAnimator;
     public float walkSpeed = 4f;
