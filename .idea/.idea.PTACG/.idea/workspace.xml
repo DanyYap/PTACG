@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb3604b1-c639-4674-b9e4-e520fee48745" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PTACG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PTACG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Floor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Floor.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Human1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Human1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Model/Axe/Axe_and_Pickaxe.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Model/Axe/Axe_and_Pickaxe.fbx.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/DanyScene/Test1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DanyScene/Test1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerMovement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerMovement.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/RoomManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/RoomManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ToolsInput.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ToolsInput.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,6 +108,7 @@
       <workItem from="1727248353906" duration="1839000" />
       <workItem from="1728360645084" duration="5929000" />
       <workItem from="1728370787614" duration="3208000" />
+      <workItem from="1728437615260" duration="161000" />
     </task>
     <servers />
   </component>
