@@ -5,10 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb3604b1-c639-4674-b9e4-e520fee48745" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Model/Axe/Axe_and_Pickaxe.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Model/Axe/Axe_and_Pickaxe.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PTACG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PTACG/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Human1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Human1.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/DanyScene/Test1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DanyScene/Test1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/ResourceMaterial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/ResourceMaterial.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/ToolsInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/ToolsInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimpleNaturePack/Prefabs/Branch_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimpleNaturePack/Prefabs/Branch_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimpleNaturePack/Prefabs/Rock_04.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SimpleNaturePack/Prefabs/Rock_04.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimpleNaturePack/Prefabs/Rock_05.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SimpleNaturePack/Prefabs/Rock_05.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimpleNaturePack/Prefabs/Tree_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SimpleNaturePack/Prefabs/Tree_01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimpleNaturePack/Prefabs/Tree_02.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SimpleNaturePack/Prefabs/Tree_02.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimpleNaturePack/Prefabs/Tree_03.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SimpleNaturePack/Prefabs/Tree_03.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimpleNaturePack/Prefabs/Tree_04.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SimpleNaturePack/Prefabs/Tree_04.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimpleNaturePack/Prefabs/Tree_05.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SimpleNaturePack/Prefabs/Tree_05.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +62,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/../../../../Unity Build Folder/PTACG Build/Ver0.01\PTACG.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../../../Unity Build Folder/PTACG Build/Ver0.01.8\PTACG.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="C:\Unity Build Folder" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -109,6 +120,8 @@
       <workItem from="1728360645084" duration="5929000" />
       <workItem from="1728370787614" duration="3208000" />
       <workItem from="1728437615260" duration="161000" />
+      <workItem from="1728538699637" duration="1166000" />
+      <workItem from="1728616574054" duration="3904000" />
     </task>
     <servers />
   </component>

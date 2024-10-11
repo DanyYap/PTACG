@@ -1,38 +1,45 @@
+using Photon.Pun;
 using UnityEngine;
 using TMPro;
 
 public class ResourceMaterial : MonoBehaviour
 {
     public GameObject resourcePrefab;
-    public int Health;
+    public int health;
     
     private Vector3 originalPosition;
+    private PhotonView photonView;
 
     void Start()
     {
         // Save the original position of the tree
-        originalPosition = transform.localPosition;
+        originalPosition = transform.localPosition;photonView = GetComponent<PhotonView>();
+        
     }
     
-    // Update is called once per frame
-    void Update()
+    [PunRPC]
+    public void TakeDamage(int damage)
     {
-        if (Health <= 0)
+        health -= damage;
+        Debug.Log("hit! Remaining health: " + health);
+        if (health <= 0)
         {
-            DropLog();
-            Destroy(gameObject); // Destroy the tree
+            if (photonView.IsMine)
+            {
+                DropLog();
+            }
+            
+            Destroy(gameObject);
+            
         }
     }
     
-    public void TakeDamage(int damage)
-    {
-        Health -= damage;
-        Debug.Log("hit! Remaining health: " + Health);
-    }
-
+    
+    [PunRPC] 
     void DropLog()
     {
-        Instantiate(resourcePrefab, transform.position, Quaternion.identity);  // Drop the log at the tree's position
-        Debug.Log("Log dropped!");
+        // Use PhotonNetwork.Instantiate to create a networked object visible to all clients
+        PhotonNetwork.Instantiate(resourcePrefab.name, transform.position, Quaternion.identity);
+        Debug.Log("Log dropped and instantiated for all players!");
     }
 }
