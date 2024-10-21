@@ -4,13 +4,15 @@ using UnityEngine;
 public class ToolsInput : MonoBehaviour
 {
     public int toolsDamage = 1;
-    public PlayerControl playerScript;
     
     [SerializeField] bool _getAttack;
 
     private void Update()
     {
-        _getAttack = playerScript.isAttacking;
+        if (PlayerControl.Instance != null)
+        {
+            _getAttack = PlayerControl.Instance.isAttacking;
+        }
     }
 
     private void OnTriggerEnter(Collider other)

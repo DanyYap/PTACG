@@ -25,8 +25,16 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (objectInRange != null)
         {
-            objectInRange.transform.SetParent(handPosition); // Attach object to hand
-            objectInRange.transform.localPosition = Vector3.zero; // Position it at the hand position
+            if (objectInRange.CompareTag("Tools")) // Check if it's a tool
+            {
+                objectInRange.transform.SetParent(handPosition); // Attach to pivot
+            }
+            else if (objectInRange.CompareTag("Interactable")) // If it's an interactable object
+            {
+                objectInRange.transform.SetParent(handPosition); // Attach to hand
+            }
+            
+            objectInRange.transform.localPosition = Vector3.zero; // Position at parent
             objectInRange.transform.localRotation = Quaternion.identity; // Reset rotation
             isHoldingObject = true;
         }
@@ -45,7 +53,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Interactable"))
+        if (other.CompareTag("Interactable") || other.CompareTag("Tools"))
         {
             objectInRange = other.gameObject;
         }
@@ -53,7 +61,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Interactable"))
+        if (other.CompareTag("Interactable") || other.CompareTag("Tools"))
         {
             objectInRange = null;
         }
