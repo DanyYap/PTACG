@@ -1,29 +1,30 @@
-using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerControl : MonoBehaviour
 {
     public static PlayerControl Instance { get; private set; }
     public Animator PlayerAnimation;
     public Transform handPosition;
-    
-    public float walkSpeed = 4f;
-    public float maximumSpeed = 10f;
+
+    public float Speed;
     public float attackCooldown = 1f;
     public bool isAttacking = false;
     
+    [SerializeField]
     private bool isHoldingObject = false;
     private bool canAttack = true;
     private float _currentSpeed;
     
+    [SerializeField]
     private GameObject objectInRange;
-    private Rigidbody rb;
+    private Vector2 move;
     private Vector2 input;
-    
-    // Start is called before the first frame update
-    void Start()
+    private Vector3 _towardDirection;
+
+    public void OnMove(InputAction.CallbackContext context)
     {
-        rb = GetComponent<Rigidbody>();
+        move = context.ReadValue<Vector2>();
     }
 
     private void Awake()
@@ -41,8 +42,7 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        input.Normalize();
+        MovePlayer();
 
         if (Input.GetMouseButtonDown(0) && canAttack)
         {
@@ -58,55 +58,25 @@ public class PlayerControl : MonoBehaviour
         {
             DropObject();
         }
-        
-        PlayerAnimation.SetFloat("Speed", _currentSpeed);
     }
 
-    void FixedUpdate()
+    public void MovePlayer()
     {
-        rb.AddForce(CalculateMovement(walkSpeed),ForceMode.VelocityChange);
-    }
-    
-    void RotatePlayer(float horizontalInput)
-    {
-        // Determine the target direction based on horizontal input
-        Vector3 targetDirection = new Vector3(horizontalInput, 0f, 0f).normalized;
-
-        if (targetDirection != Vector3.zero)
+        Vector3 movement = new Vector3(move.x, 0, move.y);
+        if (movement.magnitude > 0.1f)
         {
-            // Calculate the rotation towards the target direction
-            Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
-
-            // Smoothly rotate the player towards the target direction
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
-        }
-    
-
-    Vector3 CalculateMovement(float _speed)
-    {
-        Vector3 targetVelocity = new Vector3(input.x, 0, input.y);
-        targetVelocity = transform.TransformDirection(targetVelocity);
-
-        targetVelocity *= _speed;
-        Vector3 velocity = rb.velocity;
-        _currentSpeed = input.magnitude;
-
-        if (input.magnitude > 0.5f)
-        {
-            Vector3 velocityChange = targetVelocity - velocity;
-
-            velocityChange.x = Mathf.Clamp(velocityChange.x, -maximumSpeed, maximumSpeed);
-            velocityChange.z = Mathf.Clamp(velocityChange.z, -maximumSpeed, maximumSpeed);
-
-            velocityChange.y = 0;
-
-            return (velocityChange);
+            PlayerAnimation.SetBool("isRunning", true);
+            
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f);
+            
+            transform.Translate(movement * Speed * Time.deltaTime, Space.World);
         }
         else
         {
-            return new Vector3();
+            PlayerAnimation.SetBool("isRunning", false);
         }
     }
+    
 
 
     void Attack()
@@ -128,11 +98,7 @@ public class PlayerControl : MonoBehaviour
     {
         if (objectInRange != null)
         {
-            if (objectInRange.CompareTag("Tools")) // Check if it's a tool
-            {
-                objectInRange.transform.SetParent(handPosition); // Attach to pivot
-            }
-            else if (objectInRange.CompareTag("Interactable")) // If it's an interactable object
+            if (objectInRange.CompareTag("Interactable")) // If it's an interactable object
             {
                 objectInRange.transform.SetParent(handPosition); // Attach to hand
             }
@@ -156,7 +122,7 @@ public class PlayerControl : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Interactable") || other.CompareTag("Tools"))
+        if (!isHoldingObject && other.CompareTag("Interactable"))
         {
             objectInRange = other.gameObject;
         }
@@ -164,7 +130,7 @@ public class PlayerControl : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Interactable") || other.CompareTag("Tools"))
+        if (!isHoldingObject && objectInRange == other.gameObject)
         {
             objectInRange = null;
         }

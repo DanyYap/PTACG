@@ -6,27 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="fb3604b1-c639-4674-b9e4-e520fee48745" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PTACG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PTACG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/AxeSwing.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/AxeSwing.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Human@Happy Idle.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Human@Happy Idle.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Human@Run With Sword.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Human@Run With Sword.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Human@Running.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Human@Running.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Picking Rock.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Picking Rock.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Treadmill Running.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Treadmill Running.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Model/Human/Human1.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Model/Human/Human1.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Axe.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Axe.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Human1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Human1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Player 1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Player 1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Player1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Player1.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/DanyScene/Test1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DanyScene/Test1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerControl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerInteraction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerSetup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerSetup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/ToolsInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/ToolsInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +113,7 @@
       <workItem from="1728616574054" duration="3904000" />
       <workItem from="1728828201917" duration="193000" />
       <workItem from="1729235892080" duration="8462000" />
-      <workItem from="1729487677369" duration="7806000" />
+      <workItem from="1729487677369" duration="9107000" />
     </task>
     <servers />
   </component>
