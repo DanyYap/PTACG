@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1939476325023094549}
   - component: {fileID: 5753884837020957202}
   - component: {fileID: -6986374838054344199}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Branch_01
   m_TagString: Interactable
   m_Icon: {fileID: 0}

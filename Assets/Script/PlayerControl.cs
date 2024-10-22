@@ -11,13 +11,11 @@ public class PlayerControl : MonoBehaviour
     public float attackCooldown = 1f;
     public bool isAttacking = false;
     
-    [SerializeField]
-    private bool isHoldingObject = false;
+    public bool isHoldingObject = false;
     private bool canAttack = true;
     private float _currentSpeed;
     
-    [SerializeField]
-    private GameObject objectInRange;
+    public GameObject objectInRange;
     private Vector2 move;
     private Vector2 input;
     private Vector3 _towardDirection;
@@ -94,7 +92,7 @@ public class PlayerControl : MonoBehaviour
         canAttack = true;
     }
     
-    void PickUpObject()
+    public void PickUpObject()
     {
         if (objectInRange != null)
         {
@@ -110,7 +108,7 @@ public class PlayerControl : MonoBehaviour
     }
 
 
-    void DropObject()
+    public void DropObject()
     {
         if (isHoldingObject)
         {
