@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Photon.Pun;
 
-public class PlayerControl : MonoBehaviour
+public class PlayerControl : MonoBehaviourPunCallbacks
 {
     public static PlayerControl Instance { get; private set; }
     public Animator PlayerAnimation;
@@ -75,8 +76,6 @@ public class PlayerControl : MonoBehaviour
         }
     }
     
-
-
     void Attack()
     {
         Debug.Log("Player Attacked!");
@@ -106,7 +105,6 @@ public class PlayerControl : MonoBehaviour
             isHoldingObject = true;
         }
     }
-
 
     public void DropObject()
     {

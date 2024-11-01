@@ -1,8 +1,9 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Photon.Pun;
 
-public class MaterialProduce : MonoBehaviour
+public class MaterialProduce : MonoBehaviourPunCallbacks
 {
     public float productionTime = 5f; // Time to produce material
     public GameObject producedMaterialPrefab; // Material to be produced
@@ -57,8 +58,21 @@ public class MaterialProduce : MonoBehaviour
             // Start the production process if not already processing
             if (!isProcessing)
             {
-                StartCoroutine(ProduceMaterial(playerInRange));
-                Destroy(playerInRange.objectInRange);
+                photonView.RPC("StartProduction", RpcTarget.All, playerInRange.photonView.ViewID);
+            }
+        }
+    }
+    
+    [PunRPC]
+    private void StartProduction(int playerViewID)
+    {
+        if (!isProcessing)
+        {
+            PlayerControl player = PhotonView.Find(playerViewID).GetComponent<PlayerControl>();
+            if (player != null)
+            {
+                StartCoroutine(ProduceMaterial(player));
+                Destroy(player.objectInRange);
             }
         }
     }
@@ -73,13 +87,10 @@ public class MaterialProduce : MonoBehaviour
         // Simulate production delay
         yield return new WaitForSeconds(productionTime);
 
-        // Instantiate the material at the output point
-        Instantiate(producedMaterialPrefab, outputPoint.position, outputPoint.rotation);
+        // Instantiate the material at the output point across the network
+        PhotonNetwork.Instantiate(producedMaterialPrefab.name, outputPoint.position, outputPoint.rotation);
         Debug.Log("Material produced!");
-
-        // Destroy or deactivate the resource object that the player was holding
-        Destroy(player.objectInRange); // Or use player.objectInRange.SetActive(false);
-
+        
         // Clear player's holding object after production
         player.DropObject();
 
