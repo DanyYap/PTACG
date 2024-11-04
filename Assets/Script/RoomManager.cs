@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using Photon.Pun;
 
@@ -9,17 +8,18 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public GameObject player;
 
     [Space] 
-    public Transform[] spawnPoints;
+    public Transform spawnPoint;
 
     [Space] 
     public GameObject roomCam;
-    public GameObject levelCam;
 
     [Space] 
     public GameObject nameUI;
     public GameObject connectingUI;
 
     private string nickname = "unnamed";
+
+    public string roomNameToJoin = "test";
 
     private void Awake()
     {
@@ -35,28 +35,10 @@ public class RoomManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("Connecting...");
 
-        PhotonNetwork.ConnectUsingSettings();
+        PhotonNetwork.JoinOrCreateRoom(roomNameToJoin, null, null);
         
         nameUI.SetActive(false);
         connectingUI.SetActive(true);
-    }
-
-    public override void OnConnectedToMaster()
-    {
-        base.OnConnectedToMaster();
-        
-        Debug.Log("Connected to Server");
-
-        PhotonNetwork.JoinLobby();
-    }
-
-    public override void OnJoinedLobby()
-    {
-        base.OnJoinedLobby();
-        
-        Debug.Log("We Joined the Lobby");
-
-        PhotonNetwork.JoinOrCreateRoom("test", null, null);
     }
     
     public override void OnJoinedRoom()
@@ -66,18 +48,16 @@ public class RoomManager : MonoBehaviourPunCallbacks
         Debug.Log("We connected to a room");
         
         roomCam.SetActive(false);
-        levelCam.SetActive(true);
         
         SpawnPlayer();
     }
 
     public void SpawnPlayer()
     {
-        Transform spawnPoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)];
-        
         GameObject _player = PhotonNetwork.Instantiate(player.name, spawnPoint.position, Quaternion.identity);
         _player.GetComponent<PlayerSetup>().IsLocalPlayer();
         
         _player.GetComponent<PhotonView>().RPC("SetNickName", RpcTarget.AllBuffered, nickname);
+        PhotonNetwork.LocalPlayer.NickName = nickname;
     }
 }

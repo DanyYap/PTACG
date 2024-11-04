@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,13 +8,29 @@ using TMPro;
 
 public class RoomList : MonoBehaviourPunCallbacks
 {
+    public static RoomList Instance;
+
+    public GameObject roomManagerGameObject;
+    public RoomManager roomManager;
+    
     [Header("UI")] 
     public Transform roomListParent;
     public GameObject roomListItemPrefab;
 
 
     private List<RoomInfo> cachedRoomList = new List<RoomInfo>();
+
+    public void ChangeRoomToCreateName(string _roomName)
+    {
+        roomManager.roomNameToJoin = _roomName;
+    }
     
+    
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     IEnumerator Start()
     {
         //Precaution
@@ -82,9 +99,18 @@ public class RoomList : MonoBehaviourPunCallbacks
             GameObject roomItem = Instantiate(roomListItemPrefab, roomListParent);
 
             roomItem.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = room.Name;
-            roomItem.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = room.PlayerCount + "/16";
+            roomItem.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = room.PlayerCount + "/2";
+
+            roomItem.GetComponent<RoomItemButton>().RoomName = room.Name;
         }
         
+    }
+
+    public void JoinRoomByName(string _name)
+    {
+        roomManager.roomNameToJoin = _name;
+        roomManagerGameObject.SetActive(true);
+        gameObject.SetActive(false);
     }
     
 }

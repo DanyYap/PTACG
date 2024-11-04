@@ -9,6 +9,7 @@ public class PlayerControl : MonoBehaviourPunCallbacks
     public Transform handPosition;
 
     public float Speed;
+    public float RotationSpeed = 100f;
     public float attackCooldown = 1f;
     public bool isAttacking = false;
     
@@ -17,14 +18,11 @@ public class PlayerControl : MonoBehaviourPunCallbacks
     private float _currentSpeed;
     
     public GameObject objectInRange;
+    private float moveInput;
+    private float rotateInput;
     private Vector2 move;
     private Vector2 input;
     private Vector3 _towardDirection;
-
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        move = context.ReadValue<Vector2>();
-    }
 
     private void Awake()
     {
@@ -38,10 +36,23 @@ public class PlayerControl : MonoBehaviourPunCallbacks
         }
     }
     
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        // Read vertical input for forward and backward movement
+        moveInput = context.ReadValue<Vector2>().y;
+    }
+
+    public void OnRotate(InputAction.CallbackContext context)
+    {
+        // Read horizontal input for rotation
+        rotateInput = context.ReadValue<Vector2>().x;
+    }
+    
     // Update is called once per frame
     void Update()
     {
         MovePlayer();
+        RotatePlayer();
 
         if (Input.GetMouseButtonDown(0) && canAttack)
         {
@@ -61,18 +72,25 @@ public class PlayerControl : MonoBehaviourPunCallbacks
 
     public void MovePlayer()
     {
-        Vector3 movement = new Vector3(move.x, 0, move.y);
-        if (movement.magnitude > 0.1f)
+        Vector3 forwardMovement = transform.forward * moveInput;
+        
+        if (moveInput != 0)
         {
             PlayerAnimation.SetBool("isRunning", true);
-            
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f);
-            
-            transform.Translate(movement * Speed * Time.deltaTime, Space.World);
+            transform.Translate(forwardMovement * Speed * Time.deltaTime, Space.World);
         }
         else
         {
             PlayerAnimation.SetBool("isRunning", false);
+        }
+    }
+    
+    public void RotatePlayer()
+    {
+        if (rotateInput != 0)
+        {
+            // Rotate player based on horizontal input
+            transform.Rotate(Vector3.up * rotateInput * RotationSpeed * Time.deltaTime);
         }
     }
     

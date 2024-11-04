@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerSetup : MonoBehaviour
 {
     public PlayerControl control;
+    public GameObject camera;
 
     public string nickName;
 
@@ -13,6 +14,7 @@ public class PlayerSetup : MonoBehaviour
     public void IsLocalPlayer()
     {
         control.enabled = true;
+        camera.SetActive(true);
     }
 
     [PunRPC]

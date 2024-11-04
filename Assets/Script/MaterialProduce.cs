@@ -19,14 +19,14 @@ public class MaterialProduce : MonoBehaviourPunCallbacks
         interactAction = new InputAction(type: InputActionType.Button, binding: "<Keyboard>/e");
     }
     
-    private void OnEnable()
+    private new void OnEnable()
         {
             // Enable the input action for interacting with the machine
             interactAction.Enable();
             interactAction.performed += OnInteract;
         }
     
-    private void OnDisable()
+    private new void OnDisable()
     {
         interactAction.performed -= OnInteract;
         interactAction.Disable();
