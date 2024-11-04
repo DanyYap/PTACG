@@ -6,18 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="fb3604b1-c639-4674-b9e4-e520fee48745" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PTACG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PTACG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/RoomItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/RoomItem.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Player3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Player3.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DanyScene/Test1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DanyScene/Test1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/CameraSetup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/CameraSetup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/FaceObjectToCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/FaceObjectToCamera.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/InputManager.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/InputManager.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/MaterialProduce.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/MaterialProduce.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerControl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerSetup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerSetup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/RoomList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/RoomList.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/RoomManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/RoomManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Model/Human/Human.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Model/Human/Human.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial Level.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +120,7 @@
       <workItem from="1730125202413" duration="4666000" />
       <workItem from="1730211554004" duration="5247000" />
       <workItem from="1730446531384" duration="5550000" />
-      <workItem from="1730699631236" duration="9365000" />
+      <workItem from="1730699631236" duration="11162000" />
     </task>
     <servers />
   </component>
