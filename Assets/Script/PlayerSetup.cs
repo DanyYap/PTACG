@@ -1,6 +1,7 @@
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
+using Hastable = ExitGames.Client.Photon.Hashtable;
 
 public class PlayerSetup : MonoBehaviour
 {

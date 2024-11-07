@@ -3796,8 +3796,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15787311735e4934882fc750eb92d0eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomManagerGameObject: {fileID: 2061854231}
-  roomManager: {fileID: 2061854232}
   roomListParent: {fileID: 423672120}
   roomListItemPrefab: {fileID: 2630647715114372537, guid: 9c70daccd5b3c0646a13a6bb7afe8db0, type: 3}
 --- !u!4 &871613943
@@ -8420,11 +8418,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 6990082378416022848, guid: 99bc18b103690a24c9b72ca0ed0fb682, type: 3}
-  spawnPoint: {fileID: 1571457453}
+  spawnPoints: []
   roomCam: {fileID: 1695599927}
   nameUI: {fileID: 637644241}
   connectingUI: {fileID: 1096312631}
-  roomNameToJoin: test
 --- !u!4 &2061854233
 Transform:
   m_ObjectHideFlags: 0

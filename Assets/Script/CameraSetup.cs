@@ -14,6 +14,6 @@ public class CameraSetup : MonoBehaviour
     void LateUpdate()
     {
         // Reset the camera's local rotation to its initial rotation
-        transform.localRotation = initialRotation;
+        //transform.localRotation = initialRotation;
     }
 }
