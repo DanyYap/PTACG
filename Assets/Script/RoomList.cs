@@ -6,6 +6,7 @@ using Photon.Realtime;
 using TMPro;
 
 using UnityEngine.SceneManagement;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class RoomList : MonoBehaviourPunCallbacks
 {
@@ -33,6 +34,8 @@ public class RoomList : MonoBehaviourPunCallbacks
     private void Awake()
     {
         Instance = this;
+        PhotonNetwork.AutomaticallySyncScene = true;
+
     }
 
     IEnumerator Start()
@@ -127,7 +130,7 @@ public class RoomList : MonoBehaviourPunCallbacks
         PlayerPrefs.SetString("RoomNameToJoin", _name);
         
         gameObject.SetActive(false);
-
+        
         SceneManager.LoadScene(_sceneIndex);
         //load relavant room
     }

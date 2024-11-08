@@ -8422,6 +8422,7 @@ MonoBehaviour:
   roomCam: {fileID: 1695599927}
   nameUI: {fileID: 637644241}
   connectingUI: {fileID: 1096312631}
+  mapName: Nothing
 --- !u!4 &2061854233
 Transform:
   m_ObjectHideFlags: 0
@@ -8953,6 +8954,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1112288761122417184, guid: 6bb10c71c25cc674fbb7ea1f8d5e286a, type: 3}
+      propertyPath: sceneViewId
+      value: 21
+      objectReference: {fileID: 0}
     - target: {fileID: 5817177026520389210, guid: 6bb10c71c25cc674fbb7ea1f8d5e286a, type: 3}
       propertyPath: m_Name
       value: Axe

@@ -1093,7 +1093,6 @@ GameObject:
   - component: {fileID: 8939509558763113258}
   - component: {fileID: 6604053682653230714}
   - component: {fileID: 4517390353679614881}
-  - component: {fileID: 6951251318737801546}
   - component: {fileID: 4855782820552551170}
   - component: {fileID: 8803747726853441043}
   m_Layer: 0
@@ -1172,28 +1171,11 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &6951251318737801546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8594086588944257424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a9dbe29e228b5a4d8c4c1f12040bab2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  axeAnimator: {fileID: 7171267646329058224}
-  walkSpeed: 4
-  maximumSpeed: 10
-  attackCooldown: 1
-  attackDamage: 1
 --- !u!114 &4855782820552551170
 MonoBehaviour:
   m_ObjectHideFlags: 0

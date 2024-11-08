@@ -1,13 +1,13 @@
+using System;
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
-using Hastable = ExitGames.Client.Photon.Hashtable;
 
 public class PlayerSetup : MonoBehaviour
 {
     public PlayerControl control;
     public GameObject camera;
-
+    
     public string nickName;
 
     public TextMeshPro nickNameText;

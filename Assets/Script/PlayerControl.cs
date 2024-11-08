@@ -1,5 +1,5 @@
+using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using Photon.Pun;
 
 public class PlayerControl : MonoBehaviourPunCallbacks
@@ -7,22 +7,26 @@ public class PlayerControl : MonoBehaviourPunCallbacks
     public static PlayerControl Instance { get; private set; }
     public Animator PlayerAnimation;
     public Transform handPosition;
-
-    public float Speed;
+    
     public float RotationSpeed = 100f;
     public float attackCooldown = 1f;
     public bool isAttacking = false;
-    
+
+    public float speed = 4f;
+    public float maxVelocity = 10f;
     public bool isHoldingObject = false;
     private bool canAttack = true;
-    private float _currentSpeed;
     
     public GameObject objectInRange;
-    private float moveInput;
     private float rotateInput;
-    private Vector2 move;
     private Vector2 input;
-    private Vector3 _towardDirection;
+    private Rigidbody rb;
+
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     private void Awake()
     {
@@ -35,29 +39,25 @@ public class PlayerControl : MonoBehaviourPunCallbacks
             Destroy(gameObject);
         }
     }
-    
-    public void OnMove(InputAction.CallbackContext context)
+
+    private void FixedUpdate()
     {
-        // Read vertical input for forward and backward movement
-        moveInput = context.ReadValue<Vector2>().y;
+        rb.AddForce(CalculatedMovement(speed), ForceMode.VelocityChange);
+        
     }
 
-    public void OnRotate(InputAction.CallbackContext context)
-    {
-        // Read horizontal input for rotation
-        rotateInput = context.ReadValue<Vector2>().x;
-    }
-    
     // Update is called once per frame
     void Update()
     {
-        MovePlayer();
         RotatePlayer();
-
+        
+        input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        input.Normalize();
+        
         if (Input.GetMouseButtonDown(0) && canAttack)
         {
             Attack();
-            PlayerAnimation.SetTrigger("isAttack");
+            // PlayerAnimation.SetTrigger("isAttack");
         }
         
         if (objectInRange != null && Input.GetKeyDown(KeyCode.E) && !isHoldingObject)
@@ -70,23 +70,39 @@ public class PlayerControl : MonoBehaviourPunCallbacks
         }
     }
 
-    public void MovePlayer()
+    Vector3 CalculatedMovement(float _speed)
     {
-        Vector3 forwardMovement = transform.forward * moveInput;
-        
-        if (moveInput != 0)
+        Vector3 targetVelocity = new Vector3(input.x, 0, input.y);
+        targetVelocity = transform.TransformDirection(targetVelocity);
+
+        targetVelocity *= _speed;
+
+        Vector3 velocity = rb.velocity;
+
+        if (input.magnitude > 0.5f)
         {
-            PlayerAnimation.SetBool("isRunning", true);
-            transform.Translate(forwardMovement * Speed * Time.deltaTime, Space.World);
+            // PlayerAnimation.SetBool("isRunning", true);
+            Vector3 velocityChange = targetVelocity - velocity;
+
+            velocityChange.x = Math.Clamp(velocityChange.x, -maxVelocity, maxVelocity);
+            velocityChange.z = Math.Clamp(velocityChange.z, -maxVelocity, maxVelocity);
+
+            velocityChange.y = 0;
+
+            return (velocityChange);
         }
         else
         {
-            PlayerAnimation.SetBool("isRunning", false);
+            // PlayerAnimation.SetBool("isRunning", false);
+            return new Vector3(0, 0, 0);
         }
     }
     
+    
     public void RotatePlayer()
     {
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        rotateInput = horizontalInput;
         if (rotateInput != 0)
         {
             // Rotate player based on horizontal input
