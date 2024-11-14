@@ -26,18 +26,6 @@ public class PlayerControl : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
     private void FixedUpdate()
     {
         rb.AddForce(CalculatedMovement(speed), ForceMode.VelocityChange);

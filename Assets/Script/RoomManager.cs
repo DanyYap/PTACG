@@ -10,8 +10,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 {
     public static RoomManager instance;
     
-    public GameObject player1;
-    public GameObject player2;
+    public GameObject player;
 
     [Space] 
     public Transform[] spawnPoints;
@@ -64,34 +63,24 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         base.OnJoinedRoom();
-    
-        // Check if the local player is the master client
-        if (PhotonNetwork.IsMasterClient)
-        {
-            SpawnPlayer(player1);
-            Debug.Log("Master client has joined as Player 1");
-        }
-        else
-        {
-            SpawnPlayer(player2);
-            Debug.Log("Second client has joined as Player 2");
-        }
 
+        SpawnPlayer();
+        
         roomCam.SetActive(false);
         connectingUI.SetActive(false);
         Debug.Log("We connected to a room");
     }
 
-    public void SpawnPlayer(GameObject playerPrefab)
+    public void SpawnPlayer()
     {
         Transform spawnPoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)];
     
         // Instantiate the correct player prefab
-        GameObject _player = PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint.position, Quaternion.identity);
+        GameObject _player = PhotonNetwork.Instantiate(player.name, spawnPoint.position, Quaternion.identity);
         _player.GetComponent<PlayerSetup>().IsLocalPlayer();
     
-        _player.GetComponent<PhotonView>().RPC("SetNickName", RpcTarget.AllBuffered, nickname);
-        PhotonNetwork.LocalPlayer.NickName = nickname;
+         _player.GetComponent<PhotonView>().RPC("SetNickName", RpcTarget.AllBuffered, nickname);
+         PhotonNetwork.LocalPlayer.NickName = nickname;
 
     }
 
