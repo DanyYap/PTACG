@@ -22,7 +22,7 @@ public class ToolsInput : MonoBehaviour
             ResourceMaterial resource = other.gameObject.GetComponent<ResourceMaterial>();
             if (resource != null)
             {
-                resource.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.AllBuffered, toolsDamage);
+                resource.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, toolsDamage);
             }
         }
     }

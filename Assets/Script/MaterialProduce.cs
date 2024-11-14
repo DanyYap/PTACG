@@ -21,15 +21,12 @@ public class MaterialProduce : MonoBehaviourPunCallbacks
     
     private new void OnEnable()
         {
-            // Enable the input action for interacting with the machine
-            interactAction.Enable();
-            interactAction.performed += OnInteract;
+
         }
     
     private new void OnDisable()
     {
-        interactAction.performed -= OnInteract;
-        interactAction.Disable();
+
     }
     
     private void OnTriggerEnter(Collider other)
@@ -50,7 +47,7 @@ public class MaterialProduce : MonoBehaviourPunCallbacks
         }
     }
     
-    private void OnInteract(InputAction.CallbackContext context)
+    private void OnInteract()
     {
         // Check if the player is in range and holding the correct resource
         if (playerInRange != null && playerInRange.isHoldingObject && playerInRange.objectInRange.layer == LayerMask.NameToLayer("Resource"))
@@ -58,7 +55,7 @@ public class MaterialProduce : MonoBehaviourPunCallbacks
             // Start the production process if not already processing
             if (!isProcessing)
             {
-                photonView.RPC("StartProduction", RpcTarget.All, playerInRange.photonView.ViewID);
+                
             }
         }
     }

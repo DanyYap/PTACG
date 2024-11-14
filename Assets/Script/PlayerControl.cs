@@ -1,11 +1,9 @@
 using System;
 using UnityEngine;
-using Photon.Pun;
 
-public class PlayerControl : MonoBehaviourPunCallbacks
+public class PlayerControl : MonoBehaviour
 {
     public static PlayerControl Instance { get; private set; }
-    public Animator PlayerAnimation;
     public Transform handPosition;
     
     public float RotationSpeed = 100f;
@@ -81,7 +79,6 @@ public class PlayerControl : MonoBehaviourPunCallbacks
 
         if (input.magnitude > 0.5f)
         {
-            // PlayerAnimation.SetBool("isRunning", true);
             Vector3 velocityChange = targetVelocity - velocity;
 
             velocityChange.x = Math.Clamp(velocityChange.x, -maxVelocity, maxVelocity);
@@ -93,8 +90,7 @@ public class PlayerControl : MonoBehaviourPunCallbacks
         }
         else
         {
-            // PlayerAnimation.SetBool("isRunning", false);
-            return new Vector3(0, 0, 0);
+            return new Vector3();
         }
     }
     

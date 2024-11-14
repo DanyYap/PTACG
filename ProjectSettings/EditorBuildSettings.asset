@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/DanyScene/Test1.unity
-    guid: ad3e9f596bf53574f9ff0791f4a64c4c
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: 5c52ed8066b904d4b95180cf39e3280f
