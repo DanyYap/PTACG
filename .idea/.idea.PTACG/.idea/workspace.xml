@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb3604b1-c639-4674-b9e4-e520fee48745" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Script/RoomManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/RoomManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial Level.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +53,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/../../../../Unity Build Folder/PTACG Build/TestRun\PTACG.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../../../Unity Build Folder/PTACG Build/MainTestbuild0.0.1.2\PTACG.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="C:\Unity Build Folder" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -135,6 +135,7 @@
       <workItem from="1731459909226" duration="1921000" />
       <workItem from="1731565906816" duration="725000" />
       <workItem from="1731566653873" duration="9173000" />
+      <workItem from="1731593585487" duration="2386000" />
     </task>
     <servers />
   </component>
