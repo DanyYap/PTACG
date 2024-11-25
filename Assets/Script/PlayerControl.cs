@@ -37,7 +37,7 @@ public class PlayerControl : MonoBehaviour
     {
         RotatePlayer();
         
-        input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        input = new Vector2(0, Input.GetAxisRaw("Vertical"));
         input.Normalize();
         
         if (Input.GetMouseButtonDown(0) && canAttack)
