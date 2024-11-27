@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Photon.Pun;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -14,13 +15,32 @@ public class PlayerControl : MonoBehaviour
     public float maxVelocity = 10f;
     public bool isHoldingObject = false;
     private bool canAttack = true;
-    
+
+    public Animator toolsAnimation;
     public GameObject objectInRange;
     private float rotateInput;
     private Vector2 input;
     private Rigidbody rb;
+    public PhotonView photonView;
 
 
+    private void Awake()
+    {
+        photonView = GetComponent<PhotonView>();
+        if (photonView.IsMine)
+        {
+            Instance = this;
+        }
+    }
+    
+    private void OnDestroy()
+    {
+        if (photonView.IsMine)
+        {
+            Instance = null;
+        }
+    }
+    
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -43,7 +63,8 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && canAttack)
         {
             Attack();
-            // PlayerAnimation.SetTrigger("isAttack");
+            isAttacking = true;
+            toolsAnimation.SetBool("isAttack", true);
         }
         
         if (objectInRange != null && Input.GetKeyDown(KeyCode.E) && !isHoldingObject)
@@ -97,7 +118,6 @@ public class PlayerControl : MonoBehaviour
     void Attack()
     {
         Debug.Log("Player Attacked!");
-        isAttacking = true;
         
         canAttack = false;
         Invoke("ResetAttack", attackCooldown);

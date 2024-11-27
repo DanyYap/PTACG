@@ -8,25 +8,19 @@ public class MaterialProduce : MonoBehaviourPunCallbacks
     public float productionTime = 5f; // Time to produce material
     public GameObject producedMaterialPrefab; // Material to be produced
     public Transform outputPoint; // Where the material will appear
-
+    public string ResourceLayerType;
+    
     private InputAction interactAction;
     private bool isProcessing = false;
-    private PlayerControl playerInRange = null;
-
+    [SerializeField] PlayerControl playerInRange = null;
     
-    private void Awake()
+    private void Update()
     {
-        interactAction = new InputAction(type: InputActionType.Button, binding: "<Keyboard>/e");
-    }
-    
-    private new void OnEnable()
+        // Check for interaction input
+        if (playerInRange != null && Input.GetKeyDown(KeyCode.E))
         {
-
+            OnInteract();
         }
-    
-    private new void OnDisable()
-    {
-
     }
     
     private void OnTriggerEnter(Collider other)
@@ -50,12 +44,12 @@ public class MaterialProduce : MonoBehaviourPunCallbacks
     private void OnInteract()
     {
         // Check if the player is in range and holding the correct resource
-        if (playerInRange != null && playerInRange.isHoldingObject && playerInRange.objectInRange.layer == LayerMask.NameToLayer("Resource"))
+        if (playerInRange != null && playerInRange.isHoldingObject && playerInRange.objectInRange.layer == LayerMask.NameToLayer(ResourceLayerType))
         {
             // Start the production process if not already processing
             if (!isProcessing)
             {
-                
+                photonView.RPC("StartProduction", RpcTarget.All, playerInRange.photonView.ViewID);
             }
         }
     }
@@ -87,7 +81,7 @@ public class MaterialProduce : MonoBehaviourPunCallbacks
         // Instantiate the material at the output point across the network
         PhotonNetwork.Instantiate(producedMaterialPrefab.name, outputPoint.position, outputPoint.rotation);
         Debug.Log("Material produced!");
-        
+
         // Clear player's holding object after production
         player.DropObject();
 

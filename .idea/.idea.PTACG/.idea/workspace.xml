@@ -6,9 +6,27 @@
   <component name="ChangeListManager">
     <list default="true" id="fb3604b1-c639-4674-b9e4-e520fee48745" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PTACG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PTACG/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Axe.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Axe.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Branch_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Branch_01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Brick.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Brick.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Furnace.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Furnace.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/GamePlayer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/GamePlayer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Pickaxe.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Pickaxe.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Rock.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Rock.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Rock1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Rock1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Rock4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Rock4.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Tree1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Tree1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Tree2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Tree2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Tree3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Tree3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Tree4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Tree4.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Wood Chopper.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Wood Chopper.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/log.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/log.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial Level.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/MaterialProduce.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/MaterialProduce.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/ToolsInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/ToolsInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,27 +51,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "GamePlayLoop",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;GamePlayLoop&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C#&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\user\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\user\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\user\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\user\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\user\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\user\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$PROJECT_DIR$/../../../../Unity Build Folder/PTACG Build/MainTestbuild0.0.1.2\PTACG.exe" />
@@ -139,7 +157,9 @@
       <workItem from="1731565906816" duration="725000" />
       <workItem from="1731566653873" duration="9173000" />
       <workItem from="1731593585487" duration="2386000" />
-      <workItem from="1732543218785" duration="1744000" />
+      <workItem from="1732543218785" duration="7487000" />
+      <workItem from="1732673830415" duration="4854000" />
+      <workItem from="1732715150640" duration="1883000" />
     </task>
     <servers />
   </component>

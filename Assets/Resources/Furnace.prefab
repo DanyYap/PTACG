@@ -163,6 +163,8 @@ MonoBehaviour:
   productionTime: 5
   producedMaterialPrefab: {fileID: 3568356269264718707, guid: 0cc446b50300fdb46bfdf59920db72cb, type: 3}
   outputPoint: {fileID: 6196689953909617964}
+  ResourceLayerType: Rock
+  playerInRange: {fileID: 0}
 --- !u!4 &3184519451250979455 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 89e2c43b9e04ce04fb7dfac445e8ee92, type: 3}

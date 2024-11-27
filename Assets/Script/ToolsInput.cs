@@ -1,9 +1,12 @@
+using System;
 using Photon.Pun;
 using UnityEngine;
 
 public class ToolsInput : MonoBehaviour
 {
     public int toolsDamage = 1;
+    public bool canAttack;
+    public string ResourceType;
     
     [SerializeField] bool _getAttack;
 
@@ -17,13 +20,25 @@ public class ToolsInput : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Resource") && _getAttack)
+        if (other.gameObject.CompareTag(ResourceType))
         {
-            ResourceMaterial resource = other.gameObject.GetComponent<ResourceMaterial>();
-            if (resource != null)
+            canAttack = true;
+            if (canAttack && _getAttack)
             {
-                resource.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, toolsDamage);
+                ResourceMaterial resource = other.gameObject.GetComponent<ResourceMaterial>();
+                if (resource != null)
+                {
+                    resource.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, toolsDamage);
+                }
             }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag(ResourceType))
+        {
+            canAttack = false;
         }
     }
 }

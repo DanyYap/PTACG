@@ -99,6 +99,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e9e627f127567a74498938ad4a08aa26, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2242242077228250376}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e9e627f127567a74498938ad4a08aa26, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5322942394548737190}
   m_SourcePrefab: {fileID: 100100000, guid: e9e627f127567a74498938ad4a08aa26, type: 3}
 --- !u!1 &5952283540154854993 stripped
 GameObject:
@@ -163,6 +166,29 @@ MonoBehaviour:
   productionTime: 5
   producedMaterialPrefab: {fileID: 8088890186856944563, guid: ed2b0020c187f5a41ad2c6fdc683c0ea, type: 3}
   outputPoint: {fileID: 4409371454010658046}
+  ResourceLayerType: Wood
+  playerInRange: {fileID: 0}
+--- !u!65 &-5322942394548737190
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5952283540154854993}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.5, z: 1}
+  m_Center: {x: 0, y: 0.25210354, z: 0}
 --- !u!4 &6471975009960457451 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e9e627f127567a74498938ad4a08aa26, type: 3}

@@ -24,7 +24,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3159659151893942063}
-  m_LocalRotation: {x: 0.06162845, y: -0.7044161, z: 0.06162845, w: 0.7044161}
+  m_LocalRotation: {x: 0.08715578, y: 0, z: 0, w: 0.9961947}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -196,6 +196,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8036209140196014975}
+  - component: {fileID: 2503302148787926279}
   m_Layer: 0
   m_Name: GrabPoint
   m_TagString: Untagged
@@ -212,12 +213,33 @@ Transform:
   m_GameObject: {fileID: 5244643793130905871}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.374, y: 0.332, z: 0.102}
+  m_LocalPosition: {x: 0.315, y: 0.332, z: 0.038}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4085147617823702382}
   m_LocalEulerAnglesHint: {x: 180, y: -90, z: 0}
+--- !u!95 &2503302148787926279
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5244643793130905871}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e0674ad795ee866429d10cb05e230808, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8323753266330687099
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +463,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GamePlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9d36728b8c3d976428f5c53dd119374f, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -599,7 +625,9 @@ MonoBehaviour:
   speed: 5
   maxVelocity: 10
   isHoldingObject: 0
+  toolsAnimation: {fileID: 2503302148787926279}
   objectInRange: {fileID: 0}
+  photonView: {fileID: 0}
 --- !u!65 &1101827183238104369
 BoxCollider:
   m_ObjectHideFlags: 0
