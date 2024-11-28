@@ -1,51 +1,49 @@
+using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerControl : MonoBehaviour
 {
     public static PlayerControl Instance { get; private set; }
-    public Animator PlayerAnimation;
     public Transform handPosition;
-
-    public float Speed;
+    
+    public float RotationSpeed = 100f;
     public float attackCooldown = 1f;
     public bool isAttacking = false;
-    
+
+    public float speed = 4f;
+    public float maxVelocity = 10f;
     public bool isHoldingObject = false;
     private bool canAttack = true;
-    private float _currentSpeed;
     
     public GameObject objectInRange;
-    private Vector2 move;
+    private float rotateInput;
     private Vector2 input;
-    private Vector3 _towardDirection;
+    private Rigidbody rb;
 
-    public void OnMove(InputAction.CallbackContext context)
+
+    private void Start()
     {
-        move = context.ReadValue<Vector2>();
+        rb = GetComponent<Rigidbody>();
     }
 
-    private void Awake()
+    private void FixedUpdate()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        rb.AddForce(CalculatedMovement(speed), ForceMode.VelocityChange);
+        
     }
-    
+
     // Update is called once per frame
     void Update()
     {
-        MovePlayer();
-
+        RotatePlayer();
+        
+        input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        input.Normalize();
+        
         if (Input.GetMouseButtonDown(0) && canAttack)
         {
             Attack();
-            PlayerAnimation.SetTrigger("isAttack");
+            // PlayerAnimation.SetTrigger("isAttack");
         }
         
         if (objectInRange != null && Input.GetKeyDown(KeyCode.E) && !isHoldingObject)
@@ -58,25 +56,44 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    public void MovePlayer()
+    Vector3 CalculatedMovement(float _speed)
     {
-        Vector3 movement = new Vector3(move.x, 0, move.y);
-        if (movement.magnitude > 0.1f)
+        Vector3 targetVelocity = new Vector3(input.x, 0, input.y);
+        targetVelocity = transform.TransformDirection(targetVelocity);
+
+        targetVelocity *= _speed;
+
+        Vector3 velocity = rb.velocity;
+
+        if (input.magnitude > 0.5f)
         {
-            PlayerAnimation.SetBool("isRunning", true);
-            
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f);
-            
-            transform.Translate(movement * Speed * Time.deltaTime, Space.World);
+            Vector3 velocityChange = targetVelocity - velocity;
+
+            velocityChange.x = Math.Clamp(velocityChange.x, -maxVelocity, maxVelocity);
+            velocityChange.z = Math.Clamp(velocityChange.z, -maxVelocity, maxVelocity);
+
+            velocityChange.y = 0;
+
+            return (velocityChange);
         }
         else
         {
-            PlayerAnimation.SetBool("isRunning", false);
+            return new Vector3();
         }
     }
     
-
-
+    
+    public void RotatePlayer()
+    {
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        rotateInput = horizontalInput;
+        if (rotateInput != 0)
+        {
+            // Rotate player based on horizontal input
+            transform.Rotate(Vector3.up * rotateInput * RotationSpeed * Time.deltaTime);
+        }
+    }
+    
     void Attack()
     {
         Debug.Log("Player Attacked!");
@@ -106,7 +123,6 @@ public class PlayerControl : MonoBehaviour
             isHoldingObject = true;
         }
     }
-
 
     public void DropObject()
     {

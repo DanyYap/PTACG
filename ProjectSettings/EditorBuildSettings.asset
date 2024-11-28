@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/DanyScene/Test1.unity
-    guid: ad3e9f596bf53574f9ff0791f4a64c4c
+    path: Assets/Scenes/Main Menu.unity
+    guid: 5c52ed8066b904d4b95180cf39e3280f
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Level.unity
+    guid: 417e1e467dae114489c7fe84f42a204f
+  - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+    guid: fc262fc5805c5f040866e27669f3d03c
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: 945239013674f104ead137daea5ca6a6
   m_configObjects: {}

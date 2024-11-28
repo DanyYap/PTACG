@@ -3,27 +3,17 @@ using Photon.Pun;
 
 public class CameraSetup : MonoBehaviour
 {
-    public Transform target;
-    public float smoothTime = 0.3f;
-    public Vector3 offSet;
-
-    private Vector3 velocity = Vector3.zero;
+    private Quaternion initialRotation;
 
     void Start()
     {
-        if (PhotonView.Get(this).IsMine)
-        {
-
-        }
+        // Store the camera's initial rotation
+        initialRotation = transform.localRotation;
     }
 
-    private void Update()
+    void LateUpdate()
     {
-        if (target != null)
-        {
-            Vector3 targetPosition = target.position + offSet;
-            
-            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
-        }
+        // Reset the camera's local rotation to its initial rotation
+        //transform.localRotation = initialRotation;
     }
 }
