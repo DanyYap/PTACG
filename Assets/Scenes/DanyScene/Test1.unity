@@ -5404,11 +5404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 6990082378416022848, guid: 99bc18b103690a24c9b72ca0ed0fb682, type: 3}
-  spawnPoints: []
-  roomCam: {fileID: 0}
-  nameUI: {fileID: 0}
-  connectingUI: {fileID: 0}
-  mapName: Nothing
+  spawnPoint: {fileID: 1571457453}
 --- !u!4 &2061854233
 Transform:
   m_ObjectHideFlags: 0
@@ -10447,10 +10443,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -1112288761122417184, guid: 6bb10c71c25cc674fbb7ea1f8d5e286a, type: 3}
-      propertyPath: sceneViewId
-      value: 23
-      objectReference: {fileID: 0}
     - target: {fileID: 5817177026520389210, guid: 6bb10c71c25cc674fbb7ea1f8d5e286a, type: 3}
       propertyPath: m_Name
       value: Axe
