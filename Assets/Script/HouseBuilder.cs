@@ -64,17 +64,18 @@ public class HouseBuilder : MonoBehaviour
         {
             string itemName = other.gameObject.name;
 
-            if (itemName.Contains("Branch"))
+            if (itemName.Contains("log"))
             {
-                ProcessLogDrop("Branch", other.gameObject);
+                ProcessLogDrop("log", other.gameObject);
             }
-            else if (itemName.Contains("Rock"))
+            else if (itemName.Contains("Brick"))
             {
-                ProcessLogDrop("Rock", other.gameObject);
+                ProcessLogDrop("Brick", other.gameObject);
             }
         }
     }
-
+    
+    //Here need sync
     private void ProcessLogDrop(string itemType, GameObject droppedItem)
     {
         foreach (var wall in walls)
@@ -85,7 +86,7 @@ public class HouseBuilder : MonoBehaviour
             // Check if this wall needs more items
             if (totalPlaced < totalRequired)
             {
-                if (itemType == "Branch" && wall.branchesPlaced < wall.requiredBranches)
+                if (itemType == "log" && wall.branchesPlaced < wall.requiredBranches)
                 {
                     wall.parts[totalPlaced].SetActive(true); // Activate the corresponding wall part
                     wall.branchesPlaced++; // Increment the branches placed
@@ -113,7 +114,7 @@ public class HouseBuilder : MonoBehaviour
 
                     return; // Exit after processing
                 }
-                else if (itemType == "Rock" && wall.rocksPlaced < wall.requiredRocks)
+                else if (itemType == "Brick" && wall.rocksPlaced < wall.requiredRocks)
                 {
                     wall.parts[totalPlaced].SetActive(true); // Activate the corresponding wall part
                     wall.rocksPlaced++; // Increment the rocks placed
