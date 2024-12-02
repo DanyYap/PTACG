@@ -45,6 +45,9 @@ MonoBehaviour:
   - StartProduction
   - SetNickName
   - DebugConnection
+  - AddBranch
+  - AddRock
+  - SyncWallState
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

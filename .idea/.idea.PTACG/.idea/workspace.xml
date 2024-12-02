@@ -6,9 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="fb3604b1-c639-4674-b9e4-e520fee48745" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PTACG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PTACG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DanyScene/Test1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DanyScene/Test1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Brick.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Brick.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/GamePlayer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/GamePlayer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/log.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/log.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial Level.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/HouseBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/HouseBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/MaterialProduce.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/MaterialProduce.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerSetup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerSetup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +150,8 @@
       <workItem from="1732673830415" duration="4854000" />
       <workItem from="1732715150640" duration="2491000" />
       <workItem from="1732943770422" duration="624000" />
-      <workItem from="1733060151593" duration="1240000" />
+      <workItem from="1733060151593" duration="3680000" />
+      <workItem from="1733133792739" duration="5890000" />
     </task>
     <servers />
   </component>

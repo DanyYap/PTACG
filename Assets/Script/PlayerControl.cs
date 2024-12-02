@@ -22,6 +22,8 @@ public class PlayerControl : MonoBehaviour
     private Vector2 input;
     private Rigidbody rb;
     public PhotonView photonView;
+    public GameObject playerCamera; // Reference to the camera attached to the player prefab
+    public MonoBehaviour[] controlScripts;
 
 
     private void Awake()
@@ -49,7 +51,28 @@ public class PlayerControl : MonoBehaviour
     private void FixedUpdate()
     {
         rb.AddForce(CalculatedMovement(speed), ForceMode.VelocityChange);
-        
+        if (photonView.IsMine)
+        {
+            // Activate the camera for the local player
+            playerCamera.SetActive(true);
+
+            // Enable input/movement scripts for the local player
+            foreach (var script in controlScripts)
+            {
+                script.enabled = true;
+            }
+        }
+        else
+        {
+            // Disable the camera for remote players
+            playerCamera.SetActive(false);
+
+            // Disable input/movement scripts for remote players
+            foreach (var script in controlScripts)
+            {
+                script.enabled = false;
+            }
+        }
     }
 
     // Update is called once per frame

@@ -604,6 +604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: {fileID: 8138354113364383538}
   camera: {fileID: 3553086946132516767}
+  audioListener: {fileID: 7033952422867816243}
   nickName: 
   nickNameText: {fileID: 8926003407417513527}
 --- !u!114 &8138354113364383538
@@ -627,7 +628,10 @@ MonoBehaviour:
   isHoldingObject: 0
   toolsAnimation: {fileID: 2503302148787926279}
   objectInRange: {fileID: 0}
-  photonView: {fileID: 0}
+  photonView: {fileID: 8664456258709298165}
+  playerCamera: {fileID: 3553086946132516767}
+  controlScripts:
+  - {fileID: 8138354113364383538}
 --- !u!65 &1101827183238104369
 BoxCollider:
   m_ObjectHideFlags: 0

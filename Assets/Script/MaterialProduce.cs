@@ -82,9 +82,6 @@ public class MaterialProduce : MonoBehaviourPunCallbacks
         PhotonNetwork.Instantiate(producedMaterialPrefab.name, outputPoint.position, outputPoint.rotation);
         Debug.Log("Material produced!");
 
-        // Clear player's holding object after production
-        player.DropObject();
-
         isProcessing = false;
     }
 }
