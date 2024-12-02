@@ -9,6 +9,7 @@ public class MaterialProduce : MonoBehaviourPunCallbacks
     public GameObject producedMaterialPrefab; // Material to be produced
     public Transform outputPoint; // Where the material will appear
     public string ResourceLayerType;
+    public AudioSource produceSound;
     
     private InputAction interactAction;
     private bool isProcessing = false;
@@ -71,7 +72,12 @@ public class MaterialProduce : MonoBehaviourPunCallbacks
     private IEnumerator ProduceMaterial(PlayerControl player)
     {
         isProcessing = true;
-
+        
+        if (produceSound != null)
+        {
+            produceSound.Play();
+        }
+        
         // Play production animation or feedback
         Debug.Log("Production started...");
 
@@ -81,6 +87,11 @@ public class MaterialProduce : MonoBehaviourPunCallbacks
         // Instantiate the material at the output point across the network
         PhotonNetwork.Instantiate(producedMaterialPrefab.name, outputPoint.position, outputPoint.rotation);
         Debug.Log("Material produced!");
+        
+        if (produceSound != null && produceSound.isPlaying)
+        {
+            produceSound.Stop();
+        }
 
         isProcessing = false;
     }

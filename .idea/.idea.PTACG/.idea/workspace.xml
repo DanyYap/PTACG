@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb3604b1-c639-4674-b9e4-e520fee48745" name="Changes" comment="" />
+    <list default="true" id="fb3604b1-c639-4674-b9e4-e520fee48745" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PTACG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PTACG/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Furnace.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Furnace.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Wood Chopper.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Wood Chopper.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial Level.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/MaterialProduce.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/MaterialProduce.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/ToolsInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/ToolsInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sound/i-wish-looping-tune-225553.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sound/i-wish-looping-tune-225553.mp3.meta" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -139,7 +149,7 @@
       <workItem from="1732715150640" duration="2491000" />
       <workItem from="1732943770422" duration="624000" />
       <workItem from="1733060151593" duration="3680000" />
-      <workItem from="1733133792739" duration="6712000" />
+      <workItem from="1733133792739" duration="8771000" />
     </task>
     <servers />
   </component>

@@ -7,6 +7,7 @@ public class ToolsInput : MonoBehaviour
     public int toolsDamage = 1;
     public bool canAttack;
     public string ResourceType;
+    public AudioSource toolsSound;
     
     [SerializeField] bool _getAttack;
 
@@ -25,6 +26,7 @@ public class ToolsInput : MonoBehaviour
             canAttack = true;
             if (canAttack && _getAttack)
             {
+                toolsSound.Play();
                 ResourceMaterial resource = other.gameObject.GetComponent<ResourceMaterial>();
                 if (resource != null)
                 {
