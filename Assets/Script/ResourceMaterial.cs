@@ -6,6 +6,7 @@ public class ResourceMaterial : MonoBehaviour
 {
     public GameObject resourcePrefab;
     public int health;
+    public ParticleSystem BreakEffect;
     
     private Vector3 originalPosition;
     private PhotonView photonView;
@@ -14,6 +15,7 @@ public class ResourceMaterial : MonoBehaviour
     {
         // Save the original position of the tree
         originalPosition = transform.localPosition;photonView = GetComponent<PhotonView>();
+        BreakEffect.Stop();
         
     }
     
@@ -24,6 +26,7 @@ public class ResourceMaterial : MonoBehaviour
         Debug.Log("hit! Remaining health: " + health);
         if (health <= 0)
         {
+            BreakEffect.Play();
             if (photonView.IsMine)
             {
                 DropLog();

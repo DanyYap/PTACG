@@ -33,7 +33,8 @@ Transform:
   m_LocalPosition: {x: -18.727734, y: 0.19, z: 22.975485}
   m_LocalScale: {x: 1.2673086, y: 1.2673086, z: 1.2673086}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8599086528232024816}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5822219128627952665
@@ -142,4 +143,72 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourcePrefab: {fileID: 6719117520676213245, guid: 50d58235e53e83e42992f230284e9952, type: 3}
-  health: 6
+  health: 10
+  BreakEffect: {fileID: 3234099257220138073}
+--- !u!1001 &3197121987774301103
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8501182825445040894}
+    m_Modifications:
+    - target: {fileID: 6559600753101318495, guid: 806d7bced0d022644b678d59641ebf5f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559600753101318495, guid: 806d7bced0d022644b678d59641ebf5f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559600753101318495, guid: 806d7bced0d022644b678d59641ebf5f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559600753101318495, guid: 806d7bced0d022644b678d59641ebf5f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559600753101318495, guid: 806d7bced0d022644b678d59641ebf5f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559600753101318495, guid: 806d7bced0d022644b678d59641ebf5f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559600753101318495, guid: 806d7bced0d022644b678d59641ebf5f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559600753101318495, guid: 806d7bced0d022644b678d59641ebf5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559600753101318495, guid: 806d7bced0d022644b678d59641ebf5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559600753101318495, guid: 806d7bced0d022644b678d59641ebf5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8498354969109386621, guid: 806d7bced0d022644b678d59641ebf5f, type: 3}
+      propertyPath: m_Name
+      value: RockBreakEffect
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 806d7bced0d022644b678d59641ebf5f, type: 3}
+--- !u!198 &3234099257220138073 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 53939437475121142, guid: 806d7bced0d022644b678d59641ebf5f, type: 3}
+  m_PrefabInstance: {fileID: 3197121987774301103}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8599086528232024816 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6559600753101318495, guid: 806d7bced0d022644b678d59641ebf5f, type: 3}
+  m_PrefabInstance: {fileID: 3197121987774301103}
+  m_PrefabAsset: {fileID: 0}

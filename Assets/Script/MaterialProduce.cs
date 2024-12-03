@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,11 +10,18 @@ public class MaterialProduce : MonoBehaviourPunCallbacks
     public GameObject producedMaterialPrefab; // Material to be produced
     public Transform outputPoint; // Where the material will appear
     public string ResourceLayerType;
+    public AudioSource produceSound;
+    public ParticleSystem MachineEffect;
     
     private InputAction interactAction;
     private bool isProcessing = false;
     [SerializeField] PlayerControl playerInRange = null;
-    
+
+    private void Start()
+    {
+        MachineEffect.Stop();
+    }
+
     private void Update()
     {
         // Check for interaction input
@@ -71,7 +79,13 @@ public class MaterialProduce : MonoBehaviourPunCallbacks
     private IEnumerator ProduceMaterial(PlayerControl player)
     {
         isProcessing = true;
-
+        
+        if (produceSound != null)
+        {
+            produceSound.Play();
+            MachineEffect.Play();
+        }
+        
         // Play production animation or feedback
         Debug.Log("Production started...");
 
@@ -81,6 +95,12 @@ public class MaterialProduce : MonoBehaviourPunCallbacks
         // Instantiate the material at the output point across the network
         PhotonNetwork.Instantiate(producedMaterialPrefab.name, outputPoint.position, outputPoint.rotation);
         Debug.Log("Material produced!");
+        
+        if (produceSound != null && produceSound.isPlaying)
+        {
+            produceSound.Stop();
+            MachineEffect.Stop();
+        }
 
         isProcessing = false;
     }
