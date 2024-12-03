@@ -97,4 +97,15 @@ public class RoomManager : MonoBehaviourPunCallbacks
             //do nothing
         }
     }
+
+    public void RespawnPlayer()
+    {
+        Transform spawnPoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)];
+        
+        GameObject _player = PhotonNetwork.Instantiate(player.name, spawnPoint.position, Quaternion.identity);
+        _player.GetComponent<PlayerSetup>().IsLocalPlayer();
+        
+        _player.GetComponent<PhotonView>().RPC("SetNickName", RpcTarget.AllBuffered, nickname);
+        PhotonNetwork.LocalPlayer.NickName = nickname;
+    }
 }

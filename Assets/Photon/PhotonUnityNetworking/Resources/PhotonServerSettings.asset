@@ -48,6 +48,9 @@ MonoBehaviour:
   - AddBranch
   - AddRock
   - SyncWallState
+  - RespawnPlayer
+  - RespawnPlayerWithDelay
+  - RespawnCondition
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
