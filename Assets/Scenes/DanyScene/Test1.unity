@@ -2736,6 +2736,8 @@ MonoBehaviour:
   producedMaterialPrefab: {fileID: 6239969156481229051, guid: b71b0f8d2f881c743a85228f3030d1cb, type: 3}
   outputPoint: {fileID: 1935952191}
   ResourceLayerType: 
+  produceSound: {fileID: 0}
+  MachineEffect: {fileID: 0}
   playerInRange: {fileID: 0}
 --- !u!136 &1038943317
 CapsuleCollider:

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,11 +11,17 @@ public class MaterialProduce : MonoBehaviourPunCallbacks
     public Transform outputPoint; // Where the material will appear
     public string ResourceLayerType;
     public AudioSource produceSound;
+    public ParticleSystem MachineEffect;
     
     private InputAction interactAction;
     private bool isProcessing = false;
     [SerializeField] PlayerControl playerInRange = null;
-    
+
+    private void Start()
+    {
+        MachineEffect.Stop();
+    }
+
     private void Update()
     {
         // Check for interaction input
@@ -76,6 +83,7 @@ public class MaterialProduce : MonoBehaviourPunCallbacks
         if (produceSound != null)
         {
             produceSound.Play();
+            MachineEffect.Play();
         }
         
         // Play production animation or feedback
@@ -91,6 +99,7 @@ public class MaterialProduce : MonoBehaviourPunCallbacks
         if (produceSound != null && produceSound.isPlaying)
         {
             produceSound.Stop();
+            MachineEffect.Stop();
         }
 
         isProcessing = false;

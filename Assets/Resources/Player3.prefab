@@ -598,7 +598,11 @@ MonoBehaviour:
   speed: 4
   maxVelocity: 10
   isHoldingObject: 0
+  toolsAnimation: {fileID: 0}
   objectInRange: {fileID: 0}
+  photonView: {fileID: 0}
+  playerCamera: {fileID: 0}
+  controlScripts: []
 --- !u!114 &-6458719364794269843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -613,6 +617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: {fileID: 6132469614254193026}
   camera: {fileID: 2220736846991838935}
+  audioListener: {fileID: 0}
   nickName: 
   nickNameText: {fileID: 8475496014704007110}
 --- !u!65 &-4321304056122249690

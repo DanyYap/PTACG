@@ -4,7 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb3604b1-c639-4674-b9e4-e520fee48745" name="Changes" comment="" />
+    <list default="true" id="fb3604b1-c639-4674-b9e4-e520fee48745" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PTACG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PTACG/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Materials/Orange.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/DemoProcedural/Materials/Orange.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/No Name.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/No Name.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/car.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/Kenney Assets/Stylized city/Materials/car.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Axe.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Axe.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Furnace.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Furnace.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/GamePlayer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/GamePlayer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Pickaxe.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Pickaxe.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Player3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Player3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Rock1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Rock1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Rock4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Rock4.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Tree1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Tree1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Tree2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Tree2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Tree3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Tree3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Tree4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Tree4.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Wood Chopper.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Wood Chopper.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DanyScene/Test1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DanyScene/Test1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial Level.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/MaterialProduce.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/MaterialProduce.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/ResourceMaterial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/ResourceMaterial.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -140,6 +164,7 @@
       <workItem from="1732943770422" duration="624000" />
       <workItem from="1733060151593" duration="3680000" />
       <workItem from="1733133792739" duration="9381000" />
+      <workItem from="1733237664822" duration="2942000" />
     </task>
     <servers />
   </component>
