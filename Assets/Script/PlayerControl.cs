@@ -24,7 +24,8 @@ public class PlayerControl : MonoBehaviour
     public PhotonView photonView;
     public GameObject playerCamera; // Reference to the camera attached to the player prefab
     public MonoBehaviour[] controlScripts;
-
+    public GameObject heldObject;
+    
 
     private void Awake()
     {
@@ -156,23 +157,46 @@ public class PlayerControl : MonoBehaviour
     {
         if (objectInRange != null)
         {
-            if (objectInRange.CompareTag("Interactable")) // If it's an interactable object
+            PhotonView toolPhotonView = objectInRange.GetComponent<PhotonView>();
+
+            if (toolPhotonView != null)
             {
-                objectInRange.transform.SetParent(handPosition); // Attach to hand
+                // Transfer ownership to the current player
+                toolPhotonView.TransferOwnership(photonView.Owner);
+
+                // Parent the tool to the hand position
+                objectInRange.transform.SetParent(handPosition);
+                objectInRange.transform.localPosition = Vector3.zero;
+                objectInRange.transform.localRotation = Quaternion.identity;
+
+                // Call an RPC on the tool to update its state
+                toolPhotonView.RPC("GrabTool", RpcTarget.AllBuffered, photonView.ViewID);
+
+                // Update state variables
+                heldObject = objectInRange; // Now holding this tool
+                isHoldingObject = true;
+                objectInRange = null; // No longer "nearby" because it's held
             }
-            
-            objectInRange.transform.localPosition = Vector3.zero; // Position at parent
-            objectInRange.transform.localRotation = Quaternion.identity; // Reset rotation
-            isHoldingObject = true;
         }
     }
 
     public void DropObject()
     {
-        if (isHoldingObject)
+        if (isHoldingObject && heldObject != null)
         {
-            objectInRange.transform.SetParent(null);
-            objectInRange = null;
+            PhotonView toolPhotonView = heldObject.GetComponent<PhotonView>();
+
+            if (toolPhotonView != null && toolPhotonView.IsMine)
+            {
+                // Detach the tool and call DropTool on all clients
+                toolPhotonView.RPC("DropTool", RpcTarget.AllBuffered);
+            }
+
+            // Detach the tool locally
+            heldObject.transform.SetParent(null);
+
+            // Reset state variables
+            heldObject = null;
             isHoldingObject = false;
         }
     }

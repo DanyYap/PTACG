@@ -697,6 +697,7 @@ MonoBehaviour:
   playerCamera: {fileID: 3553086946132516767}
   controlScripts:
   - {fileID: 8138354113364383538}
+  heldObject: {fileID: 0}
 --- !u!65 &1101827183238104369
 BoxCollider:
   m_ObjectHideFlags: 0

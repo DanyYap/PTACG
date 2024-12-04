@@ -52,7 +52,7 @@ public class MaterialProduce : MonoBehaviourPunCallbacks
     private void OnInteract()
     {
         // Check if the player is in range and holding the correct resource
-        if (playerInRange != null && playerInRange.isHoldingObject && playerInRange.objectInRange.layer == LayerMask.NameToLayer(ResourceLayerType))
+        if (playerInRange != null && playerInRange.isHoldingObject && playerInRange.heldObject.layer == LayerMask.NameToLayer(ResourceLayerType))
         {
             // Start the production process if not already processing
             if (!isProcessing)
@@ -61,7 +61,7 @@ public class MaterialProduce : MonoBehaviourPunCallbacks
             }
         }
     }
-    
+
     [PunRPC]
     private void StartProduction(int playerViewID)
     {
@@ -71,7 +71,12 @@ public class MaterialProduce : MonoBehaviourPunCallbacks
             if (player != null)
             {
                 StartCoroutine(ProduceMaterial(player));
-                Destroy(player.objectInRange);
+
+                // Destroy the resource object locally only for the player holding it
+                if (photonView.IsMine)
+                {
+                    Destroy(player.heldObject);
+                }
             }
         }
     }
@@ -79,23 +84,27 @@ public class MaterialProduce : MonoBehaviourPunCallbacks
     private IEnumerator ProduceMaterial(PlayerControl player)
     {
         isProcessing = true;
-        
+
+        // Play sound and effects
         if (produceSound != null)
         {
             produceSound.Play();
             MachineEffect.Play();
         }
-        
-        // Play production animation or feedback
+
         Debug.Log("Production started...");
 
         // Simulate production delay
         yield return new WaitForSeconds(productionTime);
 
-        // Instantiate the material at the output point across the network
-        PhotonNetwork.Instantiate(producedMaterialPrefab.name, outputPoint.position, outputPoint.rotation);
-        Debug.Log("Material produced!");
-        
+        // Only the master client instantiates the material
+        if (PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.Instantiate(producedMaterialPrefab.name, outputPoint.position, outputPoint.rotation);
+            Debug.Log("Material produced!");
+        }
+
+        // Stop sound and effects
         if (produceSound != null && produceSound.isPlaying)
         {
             produceSound.Stop();
