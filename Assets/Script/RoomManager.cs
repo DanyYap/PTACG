@@ -31,7 +31,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public string mapName = "Nothing";
 
     private float timer = 0f;  // Timer value
-    private bool isTimerRunning = false;
+    public bool isTimerRunning = false;
     
     private void Awake()
     {
@@ -114,19 +114,42 @@ public class RoomManager : MonoBehaviourPunCallbacks
     {
         while (isTimerRunning)
         {
+            // Exit the coroutine if the client is not connected or is leaving the room
+            if (!PhotonNetwork.IsConnected || PhotonNetwork.CurrentRoom == null)
+            {
+                Debug.Log("Stopping UpdateTimer as the client is disconnecting or has left the room.");
+                yield break;
+            }
+
             timer += Time.deltaTime;
 
-            // Update the timer in room properties (to sync across all clients)
-            Hashtable roomProperties = PhotonNetwork.CurrentRoom.CustomProperties;
-            roomProperties["timer"] = timer;
-            PhotonNetwork.CurrentRoom.SetCustomProperties(roomProperties);
+            try
+            {
+                Hashtable roomProperties = PhotonNetwork.CurrentRoom.CustomProperties;
+                roomProperties["timer"] = timer;
+                PhotonNetwork.CurrentRoom.SetCustomProperties(roomProperties);
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning("Failed to update timer in room properties: " + ex.Message);
+            }
 
-            // Update the UI for the timer
+            // Update the timer UI
             UpdateTimerUI();
 
-            // Wait until the next frame
+            // Wait for the next frame
             yield return null;
         }
+    }
+    
+    public override void OnLeftRoom()
+    {
+        base.OnLeftRoom();
+
+        // Stop the timer when leaving the room
+        isTimerRunning = false;
+        StopAllCoroutines(); // Ensure all coroutines are stopped
+        Debug.Log("Stopped all coroutines after leaving the room.");
     }
 
     private void UpdateTimerUI()

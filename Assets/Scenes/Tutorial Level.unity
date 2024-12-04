@@ -27166,11 +27166,19 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1659820658015797765, guid: a440474510282fb4cb41d5910833d859, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5375623734835203929, guid: a440474510282fb4cb41d5910833d859, type: 3}
       propertyPath: m_Name
       value: InGame UI
       objectReference: {fileID: 0}
     - target: {fileID: 5375623734835203929, guid: a440474510282fb4cb41d5910833d859, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482618821592102129, guid: a440474510282fb4cb41d5910833d859, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}

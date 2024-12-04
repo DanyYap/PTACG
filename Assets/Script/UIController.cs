@@ -53,6 +53,9 @@ public class UIController : MonoBehaviour
     {
         Time.timeScale = 1f; // Reset time scale
 
+        // Stop the timer explicitly before leaving
+        RoomManager.instance.isTimerRunning = false;
+
         // Leave the room and wait until the client has left
         if (PhotonNetwork.InRoom)
         {
