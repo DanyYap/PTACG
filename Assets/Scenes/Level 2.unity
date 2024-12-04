@@ -1299,6 +1299,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5264283732641992037, guid: 4af9afdeacb774c498cef71524fa6b18, type: 3}
   m_PrefabInstance: {fileID: 299203351}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &304010352 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4760270125534965222, guid: a440474510282fb4cb41d5910833d859, type: 3}
+  m_PrefabInstance: {fileID: 1582645509}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &336289386
 GameObject:
   m_ObjectHideFlags: 0
@@ -2770,6 +2781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winPanel: {fileID: 1582645513}
+  finalTimeText: {fileID: 304010352}
   numberofhousestobuild: 2
   housebuild: 0
 --- !u!4 &796551374

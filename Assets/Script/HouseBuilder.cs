@@ -65,7 +65,12 @@ public class HouseBuilder : MonoBehaviourPunCallbacks
         UIManager.instance.housebuild++;
         if (UIManager.instance.housebuild >= UIManager.instance.numberofhousestobuild)
         {
-            UIManager.instance.winPanel.SetActive(true);
+            // Stop the timer and get the final time
+            RoomManager.instance.StopTimer();
+            string finalTime = RoomManager.instance.GetFinalTime();
+
+            // Show the win screen with the final time
+            UIManager.instance.ShowWinScreen(finalTime);
         }
     }
 

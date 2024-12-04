@@ -32,7 +32,32 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     private float timer = 0f;  // Timer value
     public bool isTimerRunning = false;
-    
+
+    private string finalTime; // Store the final time to display on the win screen
+
+    public void StopTimer()
+    {
+        isTimerRunning = false;
+        StopAllCoroutines(); // Stop the coroutine updating the timer
+
+        // Format and store the final time
+        finalTime = GetFormattedTimer();
+    }
+
+    // Get the formatted timer as a string
+    public string GetFormattedTimer()
+    {
+        int minutes = Mathf.FloorToInt(timer / 60);
+        int seconds = Mathf.FloorToInt(timer % 60);
+        return string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    // Provide the final time to other scripts
+    public string GetFinalTime()
+    {
+        return finalTime;
+    }
+
     private void Awake()
     {
         instance = this;
