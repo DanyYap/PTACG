@@ -2856,7 +2856,10 @@ MonoBehaviour:
   roomCam: {fileID: 1122248677}
   nameUI: {fileID: 1949042627}
   connectingUI: {fileID: 1492810582}
+  InGameUI: {fileID: 1582645514}
+  timerText: {fileID: 1582645513}
   mapName: Nothing
+  isTimerRunning: 0
 --- !u!4 &862201456
 Transform:
   m_ObjectHideFlags: 0
@@ -5132,6 +5135,22 @@ MonoBehaviour:
 --- !u!224 &1582645512 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7035887257508922099, guid: a440474510282fb4cb41d5910833d859, type: 3}
+  m_PrefabInstance: {fileID: 1582645509}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1582645513 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6803795770147562635, guid: a440474510282fb4cb41d5910833d859, type: 3}
+  m_PrefabInstance: {fileID: 1582645509}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1582645514 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5375623734835203929, guid: a440474510282fb4cb41d5910833d859, type: 3}
   m_PrefabInstance: {fileID: 1582645509}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1585507794
