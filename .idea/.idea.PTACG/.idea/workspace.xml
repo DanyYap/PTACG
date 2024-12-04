@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb3604b1-c639-4674-b9e4-e520fee48745" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PTACG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PTACG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Model/UI/GILLUBCD SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Model/UI/GILLUBCD SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/InGame UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/InGame UI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial Level.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/RoomList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/RoomList.cs" afterDir="false" />
-    </list>
+    <list default="true" id="fb3604b1-c639-4674-b9e4-e520fee48745" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -153,7 +146,7 @@
       <workItem from="1733313071106" duration="3377000" />
       <workItem from="1733320808434" duration="748000" />
       <workItem from="1733322772520" duration="1189000" />
-      <workItem from="1733337710963" duration="1340000" />
+      <workItem from="1733337710963" duration="2159000" />
     </task>
     <servers />
   </component>
