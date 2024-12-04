@@ -61,6 +61,12 @@ public class HouseBuilder : MonoBehaviourPunCallbacks
 
         // If all walls are completed, clear the text
         gatherText.text = "House built!";
+        StartCoroutine(RevealEffect());
+        UIManager.instance.housebuild++;
+        if (UIManager.instance.housebuild >= UIManager.instance.numberofhousestobuild)
+        {
+            UIManager.instance.winPanel.SetActive(true);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
