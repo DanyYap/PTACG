@@ -24057,6 +24057,7 @@ MonoBehaviour:
   InGameUI: {fileID: 5494837322379348723}
   timerText: {fileID: 5494837322379348724}
   mapName: Nothing
+  isTimerRunning: 0
 --- !u!4 &1299104765
 Transform:
   m_ObjectHideFlags: 0
@@ -27176,7 +27177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5375623734835203929, guid: a440474510282fb4cb41d5910833d859, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7482618821592102129, guid: a440474510282fb4cb41d5910833d859, type: 3}
       propertyPath: m_IsActive
