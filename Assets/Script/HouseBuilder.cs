@@ -19,7 +19,7 @@ public class HouseBuilder : MonoBehaviourPunCallbacks
     }
 
     public Wall[] walls; // Array of main walls (front, back, left, right)
-    public TMP_Text gatherText; // Text to display the message
+    public TMP_Text gatherText; // Text to display the message for this house
     public Transform buildArea; // Reference to the plane where the house is built
     private int totalLogsNeeded; // Total logs required to build the entire house
     private int logsGathered = 0;
@@ -27,6 +27,7 @@ public class HouseBuilder : MonoBehaviourPunCallbacks
 
     private void Start()
     {
+        panel.SetActive(false);
         CalculateTotalLogsNeeded();
         UpdateGatherText();
     }
@@ -51,9 +52,10 @@ public class HouseBuilder : MonoBehaviourPunCallbacks
             if (itemsPlaced < itemsRequired)
             {
                 gatherText.text = $"To build {wall.wallObject.name}, you need: " +
-                                  $"{wall.requiredRocks - wall.rocksPlaced} Rock(s) and " +
+                                  $"{wall.requiredRocks - wall.rocksPlaced} Rock(s), " +
                                   $"{wall.requiredBranches - wall.branchesPlaced} Branch(es)";
-                return;
+   
+             return;
             }
         }
 
@@ -76,9 +78,29 @@ public class HouseBuilder : MonoBehaviourPunCallbacks
                 ProcessLogDrop("Brick", other.gameObject);
             }
         }
+
+        if (other.CompareTag("Player"))
+        {
+            panel.SetActive(true);
+            gatherText.gameObject.SetActive(true);
+
+
+        }
+
     }
-    
-    //Here need sync
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player")) // Ensure it's the player exiting
+        {
+            if (panel.activeSelf) // Only disable if the panel is currently active
+            {
+                panel.SetActive(false); // Hide the panel
+                gatherText.gameObject.SetActive(false);
+            }
+        }
+    }
+
     private void ProcessLogDrop(string itemType, GameObject droppedItem)
     {
         foreach (var wall in walls)
@@ -86,30 +108,17 @@ public class HouseBuilder : MonoBehaviourPunCallbacks
             int totalPlaced = wall.branchesPlaced + wall.rocksPlaced;
             int totalRequired = wall.requiredBranches + wall.requiredRocks;
 
+            // Check if this wall needs more items
             if (totalPlaced < totalRequired)
             {
                 if (itemType == "log" && wall.branchesPlaced < wall.requiredBranches)
                 {
-                    // Trigger the networked update for branches
-                    PhotonView photonView = PhotonView.Get(this);
-                    int wallIndex = Array.IndexOf(walls, wall);
-                    photonView.RPC("AddBranch", RpcTarget.AllBuffered, wallIndex, totalPlaced);
-
-                    PlayerControl.Instance.isHoldingObject = false;
-                    Destroy(droppedItem); // Destroy the local object
-
+                    PlaceItem(wall, droppedItem, ref wall.branchesPlaced);
                     return;
                 }
                 else if (itemType == "Brick" && wall.rocksPlaced < wall.requiredRocks)
                 {
-                    // Trigger the networked update for rocks
-                    PhotonView photonView = PhotonView.Get(this);
-                    int wallIndex = Array.IndexOf(walls, wall);
-                    photonView.RPC("AddRock", RpcTarget.AllBuffered, wallIndex, totalPlaced);
-
-                    PlayerControl.Instance.isHoldingObject = false;
-                    Destroy(droppedItem); // Destroy the local object
-
+                    PlaceItem(wall, droppedItem, ref wall.rocksPlaced);
                     return;
                 }
                 else
@@ -121,53 +130,25 @@ public class HouseBuilder : MonoBehaviourPunCallbacks
         }
     }
 
-    [PunRPC]
-    private void AddBranch(int wallIndex, int partIndex)
+    private void PlaceItem(Wall wall, GameObject droppedItem, ref int itemCounter)
     {
-        Wall wall = walls[wallIndex];
-        wall.parts[partIndex].SetActive(true); // Activate the corresponding wall part
-        wall.branchesPlaced++; // Increment the branches placed
+        int totalPlaced = wall.branchesPlaced + wall.rocksPlaced;
+        wall.parts[totalPlaced].SetActive(true); // Activate the corresponding wall part
+        itemCounter++; // Increment the item counter
         logsGathered++; // Increment total logs gathered
 
-        // Update the UI and check for new walls
-        UpdateGatherText();
-        CheckForNewWall();
-    }
-    
-    [PunRPC]
-    private void AddRock(int wallIndex, int partIndex)
-    {
-        Wall wall = walls[wallIndex];
-        wall.parts[partIndex].SetActive(true); // Activate the corresponding wall part
-        wall.rocksPlaced++; // Increment the rocks placed
-        logsGathered++; // Increment total logs gathered
-
-        // Update the UI and check for new walls
-        UpdateGatherText();
-        CheckForNewWall();
-    }
-    
-    // public override void OnPlayerEnteredRoom(Player newPlayer)
-    // {
-    //     PhotonView photonView = PhotonView.Get(this);
-    //     for (int i = 0; i < walls.Length; i++)
-    //     {
-    //         photonView.RPC("SyncWallState", RpcTarget.AllBuffered, i, walls[i].branchesPlaced, walls[i].rocksPlaced);
-    //     }
-    // }
-
-    [PunRPC]
-    private void SyncWallState(int wallIndex, int branches, int rocks)
-    {
-        Wall wall = walls[wallIndex];
-        wall.branchesPlaced = branches;
-        wall.rocksPlaced = rocks;
-
-        // Update the visual state of the wall
-        for (int i = 0; i < branches + rocks; i++)
+        // Disable the gatherText and panel after placing the first item
+        if (totalPlaced == 0)
         {
-            wall.parts[i].SetActive(true);
+            //gatherText.gameObject.SetActive(false);
+            //panel.SetActive(false);
         }
+
+        PlayerControl.Instance.isHoldingObject = false;
+        Destroy(droppedItem); // Destroy the dropped item
+
+        // Update the gather text
+        UpdateGatherText();
     }
 
     private string MissingItemMessage(Wall wall)
@@ -177,7 +158,11 @@ public class HouseBuilder : MonoBehaviourPunCallbacks
 
         if (branchesRemaining > 0 && rocksRemaining > 0)
         {
-            return $"{rocksRemaining} Rock(s) and {branchesRemaining} Branch(es)";
+            return $"{branchesRemaining} Branch(es), {rocksRemaining} Rock(s)";
+        }
+        else if (branchesRemaining > 0 && rocksRemaining > 0)
+        {
+            return $"{branchesRemaining} Branch(es) and {rocksRemaining} Rock(s)";
         }
         else if (branchesRemaining > 0)
         {
@@ -190,19 +175,14 @@ public class HouseBuilder : MonoBehaviourPunCallbacks
         return "the correct item";
     }
 
-    
-    
     private IEnumerator DisplayTemporaryMessage(string message)
     {
-        gatherText.gameObject.SetActive(true); // Temporarily show the text for the message
-        panel.SetActive(true); // Keep panel hidden
+        gatherText.gameObject.SetActive(true);
         gatherText.text = message;
 
-        yield return new WaitForSeconds(2f); // Show the message for 2 seconds
+        yield return new WaitForSeconds(2f);
 
-        gatherText.gameObject.SetActive(false); // Hide the text again
-        panel.SetActive(false); // Keep panel hidden
-
+        gatherText.gameObject.SetActive(false);
     }
 
     private void CheckForNewWall()
@@ -212,20 +192,18 @@ public class HouseBuilder : MonoBehaviourPunCallbacks
             int itemsPlaced = wall.branchesPlaced + wall.rocksPlaced;
             int itemsRequired = wall.requiredBranches + wall.requiredRocks;
 
-            // If a new wall needs resources, enable the text and panel
             if (itemsPlaced < itemsRequired)
             {
                 gatherText.gameObject.SetActive(true);
-                panel.SetActive(true);
+                //panel.SetActive(true);
                 UpdateGatherText();
                 return;
             }
         }
 
-        // If all walls are built, show the "House built!" message and trigger the reveal effect
         gatherText.text = "House built!";
         gatherText.gameObject.SetActive(true);
-        panel.SetActive(false); // Hide panel after the house is built
+        panel.SetActive(false);
         StartCoroutine(RevealEffect());
     }
 
