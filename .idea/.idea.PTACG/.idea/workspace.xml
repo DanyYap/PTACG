@@ -7,16 +7,14 @@
     <list default="true" id="fb3604b1-c639-4674-b9e4-e520fee48745" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PTACG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PTACG/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Axe.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Axe.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Branch_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Branch_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/GamePlayer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/GamePlayer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Pickaxe.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Pickaxe.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Rock.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Rock.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/InGame UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/InGame UI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Brick.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Brick.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Tree3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Tree3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Tree4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Tree4.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/log.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/log.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 2.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial Level.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/MaterialProduce.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/MaterialProduce.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerControl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/ToolsInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/ToolsInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/RoomManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/RoomManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +152,8 @@
       <workItem from="1733060151593" duration="3680000" />
       <workItem from="1733133792739" duration="9381000" />
       <workItem from="1733237664822" duration="13701000" />
-      <workItem from="1733295339870" duration="7161000" />
+      <workItem from="1733295339870" duration="13637000" />
+      <workItem from="1733313053646" duration="3000" />
     </task>
     <servers />
   </component>

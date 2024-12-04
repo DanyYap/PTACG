@@ -24054,6 +24054,8 @@ MonoBehaviour:
   roomCam: {fileID: 1235447767}
   nameUI: {fileID: 950051949}
   connectingUI: {fileID: 1280938349}
+  InGameUI: {fileID: 5494837322379348723}
+  timerText: {fileID: 5494837322379348724}
   mapName: Nothing
 --- !u!4 &1299104765
 Transform:
@@ -27168,6 +27170,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGame UI
       objectReference: {fileID: 0}
+    - target: {fileID: 5375623734835203929, guid: a440474510282fb4cb41d5910833d859, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8730447722636193663, guid: a440474510282fb4cb41d5910833d859, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.1702235
@@ -27213,6 +27219,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a440474510282fb4cb41d5910833d859, type: 3}
+--- !u!1 &5494837322379348723 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5375623734835203929, guid: a440474510282fb4cb41d5910833d859, type: 3}
+  m_PrefabInstance: {fileID: 5494837322379348722}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5494837322379348724 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6803795770147562635, guid: a440474510282fb4cb41d5910833d859, type: 3}
+  m_PrefabInstance: {fileID: 5494837322379348722}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6705796309079172532
 PrefabInstance:
   m_ObjectHideFlags: 0
